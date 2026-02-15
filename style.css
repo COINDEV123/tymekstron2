@@ -426,7 +426,7 @@ body {
     font-size: 28px;
     cursor: pointer;
     opacity: 0.5;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.3s ease;
     z-index: 10000;
     background: transparent;
     width: 44px;
