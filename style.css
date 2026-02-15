@@ -422,11 +422,10 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    color: #000;
+    color: rgba(0, 0, 0, 0.5);
     font-size: 28px;
     cursor: pointer;
-    opacity: 0.5;
-    transition: opacity 0.3s ease;
+    transition: color 0.2s ease;
     z-index: 10000;
     background: transparent;
     width: 44px;
@@ -438,7 +437,7 @@ body {
 }
 
 .fullscreen-close:hover {
-    opacity: 1;
+    color: rgba(0, 0, 0, 1);
 }
 
 /* FOOTER */
