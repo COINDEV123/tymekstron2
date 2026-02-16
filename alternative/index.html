@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EP1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Top Section: Two Columns -->
+        <div class="top-section">
+            <!-- Theme Switcher (top right, aligned with content) -->
+            <div class="theme-switcher">
+                <label class="toggle-switch" title="Light / Dark">
+                    <input type="checkbox" id="theme-toggle" autocomplete="off"
+                        onchange="toggleLightDark(this.checked)">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <!-- Left Column: Album Info -->
+            <div class="album-info">
+                <h1 class="album-title">nazwa albumu</h1>
+                <p class="artist-name">pstr</p>
+                <div class="album-art">
+                    <img src="placeholder.svg" alt="Album Cover">
+                    <div class="glossy-overlay"></div>
+                </div>
+            </div>
+
+            <!-- Right Column: Tracklist -->
+            <div class="tracklist">
+                <h2 class="tracklist-title">Digital Lossless Album</h2>
+                <div class="tracks">
+                    <div class="track-item">
+                        <audio id="audio1" src="1 Eye Contact.wav"></audio>
+                        <div class="audio-player">
+                            <span class="track-number">1</span>
+                            <button class="play-btn" onclick="togglePlay('audio1', this)">▶</button>
+                            <span class="track-title">Eye Contact</span>
+                            <span class="time-display">00:00 / 00:00</span>
+                            <input type="range" class="progress-bar" value="0" min="0" max="100"
+                                onchange="seek('audio1', this.value)">
+                            <a href="1 Eye Contact.wav" download class="download-btn">
+                                <svg class="download-icon" viewBox="0 0 24 24" width="16" height="16">
+                                    <path
+                                        d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2z"
+                                        fill="currentColor" />
+                                </svg>
+                                download
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="track-item">
+                        <audio id="audio2" src="2 144.wav"></audio>
+                        <div class="audio-player">
+                            <span class="track-number">2</span>
+                            <button class="play-btn" onclick="togglePlay('audio2', this)">▶</button>
+                            <span class="track-title">144</span>
+                            <span class="time-display">00:00 / 00:00</span>
+                            <input type="range" class="progress-bar" value="0" min="0" max="100"
+                                onchange="seek('audio2', this.value)">
+                            <a href="2 144.wav" download class="download-btn">
+                                <svg class="download-icon" viewBox="0 0 24 24" width="16" height="16">
+                                    <path
+                                        d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2z"
+                                        fill="currentColor" />
+                                </svg>
+                                download
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="track-item">
+                        <audio id="audio3" src="3 Cvabs webs.wav"></audio>
+                        <div class="audio-player">
+                            <span class="track-number">3</span>
+                            <button class="play-btn" onclick="togglePlay('audio3', this)">▶</button>
+                            <span class="track-title">Cvabs</span>
+                            <span class="time-display">00:00 / 00:00</span>
+                            <input type="range" class="progress-bar" value="0" min="0" max="100"
+                                onchange="seek('audio3', this.value)">
+                            <a href="3 Cvabs webs.wav" download class="download-btn">
+                                <svg class="download-icon" viewBox="0 0 24 24" width="16" height="16">
+                                    <path
+                                        d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2z"
+                                        fill="currentColor" />
+                                </svg>
+                                download
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="track-item">
+                        <audio id="audio4" src="4 Concrete Park webs.wav"></audio>
+                        <div class="audio-player">
+                            <span class="track-number">4</span>
+                            <button class="play-btn" onclick="togglePlay('audio4', this)">▶</button>
+                            <span class="track-title">Concrete Park</span>
+                            <span class="time-display">00:00 / 00:00</span>
+                            <input type="range" class="progress-bar" value="0" min="0" max="100"
+                                onchange="seek('audio4', this.value)">
+                            <a href="4 Concrete Park webs.wav" download class="download-btn">
+                                <svg class="download-icon" viewBox="0 0 24 24" width="16" height="16">
+                                    <path
+                                        d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2z"
+                                        fill="currentColor" />
+                                </svg>
+                                download
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="track-item">
+                        <audio id="audio5" src="5 Desert Storm webs.wav"></audio>
+                        <div class="audio-player">
+                            <span class="track-number">5</span>
+                            <button class="play-btn" onclick="togglePlay('audio5', this)">▶</button>
+                            <span class="track-title">Desert Storm</span>
+                            <span class="time-display">00:00 / 00:00</span>
+                            <input type="range" class="progress-bar" value="0" min="0" max="100"
+                                onchange="seek('audio5', this.value)">
+                            <a href="5 Desert Storm webs.wav" download class="download-btn">
+                                <svg class="download-icon" viewBox="0 0 24 24" width="16" height="16">
+                                    <path
+                                        d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2z"
+                                        fill="currentColor" />
+                                </svg>
+                                download
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="track-item">
+                        <audio id="audio6" src="6 Focus webs.wav"></audio>
+                        <div class="audio-player">
+                            <span class="track-number">6</span>
+                            <button class="play-btn" onclick="togglePlay('audio6', this)">▶</button>
+                            <span class="track-title">Focus</span>
+                            <span class="time-display">00:00 / 00:00</span>
+                            <input type="range" class="progress-bar" value="0" min="0" max="100"
+                                onchange="seek('audio6', this.value)">
+                            <a href="6 Focus webs.wav" download class="download-btn">
+                                <svg class="download-icon" viewBox="0 0 24 24" width="16" height="16">
+                                    <path
+                                        d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2z"
+                                        fill="currentColor" />
+                                </svg>
+                                download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Spotify Link -->
+        <div class="spotify-section">
+            <a href="#" target="_blank" class="spotify-btn">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
+                </svg>
+                Listen on Spotify
+            </a>
+        </div>
+
+        <!-- Bottom Section: Gallery -->
+        <div class="gallery-section">
+            <h2 class="gallery-title">Gallery</h2>
+            <div class="gallery-search">
+                <input type="text" id="gallery-search-input"
+                    placeholder="Search by tag (e.g. photo, studio, portrait)...">
+            </div>
+            <div class="gallery-grid">
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="album,cover,main"><img
+                        src="WhatsApp Image 2026-02-08 at 15.48.38.jpeg" alt="Album Cover"></div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="photo,red"><img
+                        src="WhatsApp Image 2026-02-08 at 16.20.01.jpeg" alt="Photo 1"></div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="art"><img
+                        src="[t×6s]_[027206fc-ffd8-4491-aba8-5c6a74ddd52e]_2026-02-08_15-49-23.png" alt="Photo 2"></div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="art"><img
+                        src="[t×6s]_[027206fc-ffd8-4491-aba8-5c6a74ddd52e]_2026-02-08_15-50-43.png" alt="Photo 3"></div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="art"><img
+                        src="[t×6s]_[027206fc-ffd8-4491-aba8-5c6a74ddd52e]_2026-02-08_15-51-14.png" alt="Photo 4"></div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="art"><img
+                        src="[t×6s]_[027206fc-ffd8-4491-aba8-5c6a74ddd52e]_2026-02-08_15-51-37.png" alt="Photo 5"></div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="art"><img
+                        src="[t×6s]_[027206fc-ffd8-4491-aba8-5c6a74ddd52e]_2026-02-08_15-51-37(1).png" alt="Photo 6">
+                </div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="art"><img
+                        src="[t×6s]_[027206fc-ffd8-4491-aba8-5c6a74ddd52e]_2026-02-08_15-51-54.png" alt="Photo 7"></div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="art"><img
+                        src="[t×6s]_[027206fc-ffd8-4491-aba8-5c6a74ddd52e]_2026-02-08_15-53-37.png" alt="Photo 8"></div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="art"><img
+                        src="[t×6s]_[027206fc-ffd8-4491-aba8-5c6a74ddd52e]_2026-02-08_15-53-48.png" alt="Photo 9"></div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="art"><img
+                        src="[t×6s]_[f351b7d2-894e-48f7-b371-74b244b36ef7]_2026-02-08_15-57-34.png" alt="Photo 10">
+                </div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="art"><img
+                        src="[t×6s]_[5b718cab-3b08-449d-a914-b47843a98aa8]_2026-02-08_16-01-07.png" alt="Photo 11">
+                </div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="art"><img
+                        src="[t×6s]_[5b718cab-3b08-449d-a914-b47843a98aa8]_2026-02-08_16-03-29.png" alt="Photo 12">
+                </div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="art"><img
+                        src="[t×6s]_[5b718cab-3b08-449d-a914-b47843a98aa8]_2026-02-08_16-03-43.png" alt="Photo 13">
+                </div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="art"><img
+                        src="[t×6s]_[0679a831-3093-4905-aba0-f65973a28f8f]_2026-02-08_16-23-09.png" alt="Photo 14">
+                </div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="art"><img
+                        src="[t×6s]_[0679a831-3093-4905-aba0-f65973a28f8f]_2026-02-08_16-24-14.png" alt="Photo 15">
+                </div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="art"><img
+                        src="[t×6s]_[0679a831-3093-4905-aba0-f65973a28f8f]_2026-02-08_16-24-50.png" alt="Photo 16">
+                </div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="art"><img
+                        src="[t×6s]_[a7516edd-9b5a-4ab3-9115-90bce1ccfc31]_2026-02-08_16-26-57.png" alt="Photo 17">
+                </div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="photo"><img
+                        src="[t×6s]_[d43098c3-b783-4cd9-ab82-0fcb4cfde78e]_2026-02-08_16-30-22.png" alt="Photo 18">
+                </div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="photo"><img
+                        src="[t×6s]_[d43098c3-b783-4cd9-ab82-0fcb4cfde78e]_2026-02-08_16-31-06.png" alt="Photo 19">
+                </div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="photo"><img
+                        src="[t×6s]_[d43098c3-b783-4cd9-ab82-0fcb4cfde78e]_2026-02-08_16-31-41.png" alt="Photo 20">
+                </div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="photo"><img src="DSCF9088.JPG"
+                        alt="Photo 21">
+                </div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="photo"><img src="DSCF9094.JPG"
+                        alt="Photo 22">
+                </div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="photo"><img src="DSCF9167.JPG"
+                        alt="Photo 23">
+                </div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="photo"><img src="DSCF9177.JPG"
+                        alt="Photo 24">
+                </div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="photo"><img src="DSCF9197.JPG"
+                        alt="Photo 25">
+                </div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="photo"><img
+                        src="WhatsApp Image 2026-02-08 at 15.59.40.jpeg" alt="Photo 26">
+                </div>
+                <div class="polaroid" onclick="openFullscreen(this)" data-tags="art"><img
+                        src="[t×6s]_[5b718cab-3b08-449d-a914-b47843a98aa8]_2026-02-08_16-03-27.png" alt="Photo 27">
+                </div>
+            </div>
+        </div>
+
+        <!-- Fullscreen Overlay -->
+        <div id="fullscreen-overlay" class="fullscreen-overlay" onclick="closeFullscreen(event)">
+            <div class="fullscreen-content">
+                <button class="nav-arrow nav-prev" onclick="navigatePhoto(-1, event)" title="Previous"><svg width="20"
+                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <polyline points="15 18 9 12 15 6" />
+                    </svg></button>
+                <span class="fullscreen-close" onclick="closeFullscreen(event)">✕</span>
+                <div class="fullscreen-img-container">
+                    <img id="fullscreen-img" src="" alt="Fullscreen">
+                </div>
+                <button class="nav-arrow nav-next" onclick="navigatePhoto(1, event)" title="Next"><svg width="20"
+                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <polyline points="9 18 15 12 9 6" />
+                    </svg></button>
+                <div class="fullscreen-sidebar">
+                    <div class="sidebar-header">Author</div>
+                    <div class="sidebar-artist">pstr</div>
+                    <div class="sidebar-divider"></div>
+                    <div class="sidebar-label">Project</div>
+                    <div class="sidebar-value">EP1</div>
+                    <div class="sidebar-divider"></div>
+                    <div class="sidebar-label">Medium</div>
+                    <div class="sidebar-value">Digital Art / Photography</div>
+                    <div class="sidebar-divider"></div>
+                    <div class="sidebar-label">Year</div>
+                    <div class="sidebar-value">2026</div>
+                    <div class="sidebar-divider"></div>
+                    <div class="sidebar-label">Contact</div>
+                    <div class="sidebar-links">
+                        <a href="https://www.youtube.com/@pstar707" target="_blank">YouTube</a>
+                        <a href="https://soundcloud.com/tymek-sionko" target="_blank">SoundCloud</a>
+                        <a href="https://www.instagram.com/ty_meksionko/" target="_blank">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer: Social Links -->
+        <footer class="footer">
+            <div class="social-links">
+                <a href="https://www.youtube.com/@pstar707" target="_blank" class="social-link" title="YouTube">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path
+                            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/ty_meksionko/" target="_blank" class="social-link" title="Instagram">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
+
+                <a href="https://soundcloud.com/tymek-sionko" target="_blank" class="social-link" title="SoundCloud">
+                    <img src="cloudmark-white.png" alt="SoundCloud" width="24" height="24">
+                </a>
+            </div>
+    </div>
+    </footer>
+    </div>
+
+    <script>
+        // Theme colors for progress bar fill
+        const themeColors = {
+            white: { fill: '#000000', bg: '#e0e0e0' },
+            black: { fill: '#cccccc', bg: '#222222' }
+        };
+        let currentTheme = 'white';
+
+        // Reset toggle on page load
+        window.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('theme-toggle').checked = false;
+            applyTheme('white');
+        });
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            document.body.setAttribute('data-theme', theme);
+            currentTheme = theme;
+            document.querySelectorAll('.progress-bar').forEach(bar => {
+                const val = bar.value;
+                const colors = themeColors[theme];
+                bar.style.background = `linear-gradient(to right, ${colors.fill} ${val}%, ${colors.bg} ${val}%)`;
+            });
+        }
+
+        function toggleLightDark(isDark) {
+            applyTheme(isDark ? 'black' : 'white');
+        }
+
+        function setTheme(theme) {
+            applyTheme(theme);
+        }
+
+        // Fullscreen image viewer with navigation
+        let currentPhotoIndex = 0;
+        const galleryItems = document.querySelectorAll('.polaroid');
+
+        function openFullscreen(el) {
+            const img = el.querySelector('img');
+            const overlay = document.getElementById('fullscreen-overlay');
+            const fullImg = document.getElementById('fullscreen-img');
+
+            currentPhotoIndex = Array.from(galleryItems).indexOf(el);
+            fullImg.src = img.src;
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            updateNavArrows();
+        }
+
+        function navigatePhoto(direction, e) {
+            if (e) { e.stopPropagation(); e.preventDefault(); }
+            const newIndex = currentPhotoIndex + direction;
+            if (newIndex < 0 || newIndex >= galleryItems.length) return;
+            currentPhotoIndex = newIndex;
+            const img = galleryItems[currentPhotoIndex].querySelector('img');
+            const fullImg = document.getElementById('fullscreen-img');
+            fullImg.style.opacity = '0';
+            setTimeout(() => {
+                fullImg.src = img.src;
+                fullImg.style.opacity = '1';
+            }, 150);
+            updateNavArrows();
+        }
+
+        function updateNavArrows() {
+            const prevBtn = document.querySelector('.nav-prev');
+            const nextBtn = document.querySelector('.nav-next');
+            if (prevBtn) prevBtn.style.visibility = currentPhotoIndex <= 0 ? 'hidden' : 'visible';
+            if (nextBtn) nextBtn.style.visibility = currentPhotoIndex >= galleryItems.length - 1 ? 'hidden' : 'visible';
+        }
+
+        function closeFullscreen(e) {
+            if (e && (e.target.closest('.fullscreen-content') && !e.target.closest('.fullscreen-close'))) return;
+            if (e && e.target.closest('.nav-arrow')) return;
+            const overlay = document.getElementById('fullscreen-overlay');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeFullscreen();
+            if (e.key === 'ArrowLeft') navigatePhoto(-1);
+            if (e.key === 'ArrowRight') navigatePhoto(1);
+        });
+
+        // Touch swipe for mobile
+        (function () {
+            let touchStartX = 0;
+            let touchEndX = 0;
+            const overlay = document.getElementById('fullscreen-overlay');
+
+            overlay.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            overlay.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 50) { // min 50px swipe
+                    if (diff > 0) {
+                        navigatePhoto(1); // swipe left = next
+                    } else {
+                        navigatePhoto(-1); // swipe right = prev
+                    }
+                }
+            }, { passive: true });
+        })();
+
+        function togglePlay(audioId, btn) {
+            const audio = document.getElementById(audioId);
+            const allAudios = document.querySelectorAll('audio');
+            const allBtns = document.querySelectorAll('.play-btn');
+
+            allAudios.forEach(a => {
+                if (a.id !== audioId) a.pause();
+            });
+            allBtns.forEach(b => {
+                if (b !== btn) b.textContent = '▶';
+            });
+
+            if (audio.paused) {
+                audio.play();
+                btn.textContent = '⏸';
+            } else {
+                audio.pause();
+                btn.textContent = '▶';
+            }
+        }
+
+        function seek(audioId, value) {
+            const audio = document.getElementById(audioId);
+            const duration = audio.duration;
+            audio.currentTime = (duration * value) / 100;
+            const progressBar = audio.closest('.track-item').querySelector('.progress-bar');
+            const colors = themeColors[currentTheme];
+            progressBar.style.background = `linear-gradient(to right, ${colors.fill} ${value}%, ${colors.bg} ${value}%)`;
+        }
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        document.querySelectorAll('audio').forEach(audio => {
+            const player = audio.closest('.track-item');
+            const progressBar = player.querySelector('.progress-bar');
+            const timeDisplay = player.querySelector('.time-display');
+            const playBtn = player.querySelector('.play-btn');
+            let startTime = null;
+            let startPosition = 0;
+
+            function animateUpdate() {
+                if (audio.paused || audio.ended) return;
+                if (audio.duration) {
+                    var now = new Date();
+                    var timeDiff = (now.getTime() - startTime.getTime()) / 1000;
+                    var currentTime = startPosition + timeDiff;
+                    currentTime = Math.min(currentTime, audio.duration);
+                    var perc = (currentTime / audio.duration) * 100;
+
+                    progressBar.value = perc;
+                    var colors = themeColors[currentTheme];
+                    progressBar.style.background = `linear-gradient(to right, ${colors.fill} ${perc}%, ${colors.bg} ${perc}%)`;
+                    timeDisplay.textContent = `${formatTime(currentTime)} / ${formatTime(audio.duration)}`;
+
+                    if (perc < 100) {
+                        window.requestAnimationFrame(animateUpdate);
+                    }
+                }
+            }
+
+            audio.addEventListener('play', () => {
+                startTime = new Date();
+                startPosition = audio.currentTime;
+                window.requestAnimationFrame(animateUpdate);
+            });
+
+            audio.addEventListener('seeked', () => {
+                startTime = new Date();
+                startPosition = audio.currentTime;
+            });
+
+            audio.addEventListener('pause', () => {
+                if (audio.duration) {
+                    var perc = (audio.currentTime / audio.duration) * 100;
+                    progressBar.value = perc;
+                    var colors = themeColors[currentTheme];
+                    progressBar.style.background = `linear-gradient(to right, ${colors.fill} ${perc}%, ${colors.bg} ${perc}%)`;
+                    timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+                }
+            });
+
+            audio.addEventListener('ended', () => {
+                playBtn.textContent = '▶';
+                progressBar.value = 0;
+                var colors = themeColors[currentTheme];
+                progressBar.style.background = `linear-gradient(to right, ${colors.fill} 0%, ${colors.bg} 0%)`;
+
+                // Auto-play next track
+                const allTracks = Array.from(document.querySelectorAll('.track-item'));
+                const currentIndex = allTracks.indexOf(player);
+                if (currentIndex < allTracks.length - 1) {
+                    const nextTrack = allTracks[currentIndex + 1];
+                    const nextAudio = nextTrack.querySelector('audio');
+                    const nextBtn = nextTrack.querySelector('.play-btn');
+                    nextAudio.play();
+                    nextBtn.textContent = '⏸';
+                }
+            });
+
+            audio.addEventListener('loadedmetadata', () => {
+                timeDisplay.textContent = `00:00 / ${formatTime(audio.duration)}`;
+            });
+        });
+        // Gallery tag search
+        document.getElementById('gallery-search-input').addEventListener('input', function () {
+            const query = this.value.toLowerCase().trim();
+            document.querySelectorAll('.polaroid').forEach(item => {
+                const tags = (item.getAttribute('data-tags') || '').toLowerCase();
+                if (!query || tags.includes(query)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
