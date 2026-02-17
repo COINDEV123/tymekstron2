@@ -42,6 +42,11 @@
     font-family: inherit;
 }
 
+html {
+    background: var(--bg);
+    transition: background 0.4s ease;
+}
+
 body {
     font-family: 'Michroma', Arial, Helvetica, sans-serif;
     background: var(--bg);
@@ -59,19 +64,21 @@ body {
 /* TOP SECTION: Two Columns */
 .top-section {
     display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 40px;
-    margin-bottom: 40px;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 0 40px;
+    margin-bottom: 15px;
     position: relative;
 }
 
 /* LEFT COLUMN: Album Info */
 .album-info {
-    display: flex;
-    flex-direction: column;
+    display: contents;
 }
 
 .album-title {
+    grid-column: 1;
+    grid-row: 1;
     font-size: 28px;
     font-weight: bold;
     color: var(--text);
@@ -79,12 +86,17 @@ body {
 }
 
 .artist-name {
+    grid-column: 1;
+    grid-row: 2;
     font-size: 16px;
     color: var(--text);
     margin-bottom: 20px;
 }
 
 .album-art {
+    grid-column: 1;
+    grid-row: 3;
+    align-self: start;
     position: relative;
     width: 100%;
     aspect-ratio: 1;
@@ -107,23 +119,33 @@ body {
 
 /* RIGHT COLUMN: Tracklist */
 .tracklist {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
+    display: contents;
 }
 
 .tracklist-title {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    align-self: end;
     font-size: 22px;
     font-weight: bold;
     color: var(--text);
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .tracks {
+    grid-column: 2;
+    grid-row: 3;
+    align-self: start;
     display: flex;
     flex-direction: column;
     gap: 0;
+}
+
+.spotify-section {
+    grid-column: 2;
+    grid-row: 4;
+    margin-top: 5px;
 }
 
 /* Audio Player Styling */
@@ -251,8 +273,9 @@ body {
 
 /* GALLERY SECTION */
 .gallery-section {
-    padding-top: 40px;
-    margin-top: 100px;
+    padding-top: 0;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .gallery-title {
@@ -439,7 +462,7 @@ body {
     top: 8px;
     right: 8px;
     color: #000000;
-    font-size: 28px;
+    font-size: 24px;
     cursor: pointer;
     transition: color 0.2s ease;
     z-index: 10000;
@@ -450,7 +473,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    line-height: 1;
+    line-height: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
 
 .fullscreen-close:hover {
@@ -577,8 +605,8 @@ body {
 
 /* FOOTER */
 .footer {
-    margin-top: 60px;
-    padding-top: 30px;
+    margin-top: 20px;
+    padding-top: 15px;
     border-top: 1px solid var(--border);
     transition: border-color 0.4s ease;
 }
@@ -678,19 +706,22 @@ audio {
 
 @media (max-width: 768px) {
     body {
-        padding: 20px;
-        padding-top: 60px;
+        padding: 16px;
+        padding-top: 50px;
     }
 
     /* Stack album info and tracklist */
     .top-section {
-        grid-template-columns: 1fr;
-        gap: 20px;
+        display: block;
     }
 
     .album-info {
-        align-items: center;
+        display: block;
         text-align: center;
+    }
+
+    .album-title {
+        font-size: 22px;
     }
 
     .album-art {
@@ -698,16 +729,23 @@ audio {
         margin: 0 auto;
     }
 
-    .album-title {
-        font-size: 22px;
-    }
-
     .tracklist {
-        margin-top: 10px;
+        display: block;
+        margin-top: 20px;
     }
 
     .tracklist-title {
         font-size: 18px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .tracks {
+        width: 100%;
+    }
+
+    .spotify-section {
+        margin-top: 10px;
     }
 
     /* Compact audio player */
@@ -740,8 +778,12 @@ audio {
 
     /* Gallery: 2 columns on mobile */
     .gallery-section {
-        margin-top: 80px;
-        padding-top: 20px;
+        margin-top: 20px;
+        padding-top: 10px;
+    }
+
+    .gallery-search input {
+        max-width: 100%;
     }
 
     .gallery-grid {
@@ -794,19 +836,17 @@ audio {
     }
 
     .toggle-switch {
-        width: 30px;
-        height: 15px;
+        transform: scale(0.625);
+        transform-origin: top right;
+    }
+
+    .toggle-slider {
+        border-width: 2px;
     }
 
     .toggle-slider::before {
-        width: 11px;
-        height: 11px;
-        left: 1px;
-        bottom: 1px;
-    }
-
-    input:checked+.toggle-slider::before {
-        transform: translateX(15px);
+        bottom: 2px;
+        left: 2px;
     }
 
     /* Theme switcher */
