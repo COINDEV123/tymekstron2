@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
   <rect width="500" height="500" fill="#ffffff"/>
-  <text x="250" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="200" fill="#000000">?</text>
+  <text x="250" y="230" text-anchor="middle" font-family="'Michroma', Arial, sans-serif" font-size="28" fill="#000000" letter-spacing="3">ALBUM</text>
+  <text x="250" y="270" text-anchor="middle" font-family="'Michroma', Arial, sans-serif" font-size="28" fill="#000000" letter-spacing="3">COVER</text>
+  <text x="250" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#999999">(temporary)</text>
 </svg>
