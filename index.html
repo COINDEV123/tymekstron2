@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EP1</title>
+    <meta name="description" content="Lossless Digital Album by pstr. Listen to EP1.">
+    <meta property="og:title" content="EP1 by pstr">
+    <meta property="og:description" content="Lossless Digital Album by pstr. Listen to EP1.">
+    <meta property="og:image" content="Album%20cover%20temporary.jpg">
+    <meta property="og:type" content="music.album">
 
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
@@ -20,6 +25,11 @@
 </head>
 
 <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <img src="favicon_io/favicon-32x32.png" alt="Loading..." class="loading-spinner">
+    </div>
+
     <div class="container">
         <!-- Top Section: Two Columns -->
         <div class="top-section">
@@ -36,7 +46,7 @@
                 <h1 class="album-title">EP1 <span class="info-icon" onclick="toggleAbout()" title="About">ⓘ</span></h1>
                 <p class="artist-name">pstr</p>
                 <div class="album-art">
-                    <img src="placeholder.svg" alt="Album Cover">
+                    <img src="Album cover temporary.jpg" alt="Album Cover">
                     <div class="glossy-overlay"></div>
                 </div>
             </div>
@@ -182,7 +192,7 @@
                         <span class="track-number extra-badge">RMX</span>
                         <button class="play-btn" onclick="togglePlay('audioExtra1', this)">▶</button>
                         <span class="track-title">144 — <a href="https://www.instagram.com/lausch.gift/" target="_blank"
-                                style="color: inherit; text-decoration: underline;">REC°</a> Remix</span>
+                                class="rec-link">REC°</a> Remix</span>
                         <span class="time-display">00:00 / 00:00</span>
                         <input type="range" class="progress-bar" value="0" min="0" max="100"
                             oninput="seek('audioExtra1', this.value)">
@@ -452,8 +462,10 @@
                     <img src="cloudmark-white.png" alt="SoundCloud" width="24" height="24">
                 </a>
             </div>
-    </div>
-    </footer>
+            <div class="footer-copyright">
+                &copy; 2026 pstr
+            </div>
+        </footer>
     </div>
 
     <script>
@@ -469,6 +481,12 @@
             document.getElementById('theme-toggle').checked = false;
             applyTheme('white');
             syncAlbumArtSize();
+            
+            // Also observe the tracks element for any internal size changes (e.g., fonts loading)
+            const tracks = document.querySelector('.tracks');
+            if (tracks && window.ResizeObserver) {
+                new ResizeObserver(() => syncAlbumArtSize()).observe(tracks);
+            }
         });
 
         // Sync album art size to match tracks height
@@ -476,15 +494,27 @@
             const tracks = document.querySelector('.tracks');
             const albumArt = document.querySelector('.album-art');
             if (!tracks || !albumArt || window.innerWidth <= 768) {
-                albumArt.style.width = '';
-                albumArt.style.height = '';
+                if(albumArt) {
+                    albumArt.style.width = '';
+                    albumArt.style.height = '';
+                }
                 return;
             }
             const tracksHeight = tracks.offsetHeight;
-            albumArt.style.width = tracksHeight + 'px';
-            albumArt.style.height = tracksHeight + 'px';
+            if (tracksHeight > 0) {
+                albumArt.style.width = tracksHeight + 'px';
+                albumArt.style.height = tracksHeight + 'px';
+            }
         }
         window.addEventListener('resize', syncAlbumArtSize);
+        window.addEventListener('load', () => {
+            syncAlbumArtSize();
+            // Hide loading screen
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                loadingScreen.classList.add('hidden');
+            }
+        });
 
         function applyTheme(theme) {
             document.documentElement.setAttribute('data-theme', theme);
