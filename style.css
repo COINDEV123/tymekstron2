@@ -808,8 +808,9 @@ body {
 /* ===== THEME SWITCHER ===== */
 .theme-switcher {
     position: absolute;
-    top: 5px;
+    top: 0;
     right: 0;
+    height: 34px; /* Matches the line-height of the 28px album-title for perfect centering */
     display: flex;
     align-items: center;
     gap: 12px;
