@@ -11,6 +11,11 @@
     <meta property="og:image" content="Album%20cover%20temporary.jpg">
     <meta property="og:type" content="music.album">
 
+    <!-- Preloading Critical Assets -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="Album cover temporary.jpg" as="image">
+    <link rel="preload" href="https://fonts.gstatic.com/s/michroma/v24/t6kb26297VPhW342_7_v.woff2" as="font" type="font/woff2" crossorigin>
+
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
@@ -46,7 +51,7 @@
                 <h1 class="album-title">KONTROLA<span class="info-icon" onclick="toggleAbout()" title="About">ⓘ</span></h1>
                 <p class="artist-name">pstr</p>
                 <div class="album-art">
-                    <img src="Album cover temporary.jpg" alt="Album Cover">
+                    <img src="Album cover temporary.jpg" alt="Album Cover" fetchpriority="high">
                     <div class="glossy-overlay"></div>
                 </div>
             </div>
@@ -245,162 +250,162 @@
                 <!-- Eye Contact -->
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="eye contact,photo,Tosia,2026"
                     data-description="">
-                    <img src="tosia eye contact.jpg" alt="Eye Contact">
+                    <img src="tosia eye contact.jpg" alt="Eye Contact" loading="lazy">
                 </div>
 
                 <!-- 144 -->
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="144,photo,PSTR,2026"
                     data-description="">
-                    <img src="144 main.JPG" alt="144 Main">
+                    <img src="144 main.JPG" alt="144 Main" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="144,photo,PSTR,2026"
                     data-description="">
-                    <img src="144 2.JPG" alt="144 2">
+                    <img src="144 2.JPG" alt="144 2" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="144,photo,PSTR,2026"
                     data-description="">
-                    <img src="144 3.JPG" alt="144 3">
+                    <img src="144 3.JPG" alt="144 3" loading="lazy">
                 </div>
 
                 <!-- Cvabs -->
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="cvabs,photo,PSTR,2026"
                     data-description="">
-                    <img src="Cvabs main.jpeg" alt="Cvabs Main">
+                    <img src="Cvabs main.jpeg" alt="Cvabs Main" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="cvabs,digital art,PSTR,2026"
                     data-description="">
-                    <img src="cvabs 3d full.png" alt="Cvabs 3D Full">
+                    <img src="cvabs 3d full.png" alt="Cvabs 3D Full" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="cvabs,digital art,PSTR,2026"
                     data-description="">
-                    <img src="Cvabs dots.png" alt="Cvabs Dots">
+                    <img src="Cvabs dots.png" alt="Cvabs Dots" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="cvabs,digital art,PSTR,2026"
                     data-description="">
-                    <img src="cvabs small dots.png" alt="Cvabs Small Dots">
+                    <img src="cvabs small dots.png" alt="Cvabs Small Dots" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="cvabs,digital art,PSTR,2026"
                     data-description="">
-                    <img src="cvabs picsart 1.jpg" alt="Cvabs Picsart 1">
+                    <img src="cvabs picsart 1.jpg" alt="Cvabs Picsart 1" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="cvabs,digital art,PSTR,2026"
                     data-description="">
-                    <img src="cvabs picsart 2.jpg" alt="Cvabs Picsart 2">
+                    <img src="cvabs picsart 2.jpg" alt="Cvabs Picsart 2" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="cvabs,digital art,PSTR,2026"
                     data-description="">
-                    <img src="cvabs3.jpg" alt="Cvabs 3">
+                    <img src="cvabs3.jpg" alt="Cvabs 3" loading="lazy">
                 </div>
 
                 <!-- Concrete Park -->
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="concrete park,photo,PSTR,2026"
                     data-description="">
-                    <img src="concretepark main.jpg" alt="Concrete Park Main">
+                    <img src="concretepark main.jpg" alt="Concrete Park Main" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="concrete park,photo,Tosia,2026"
                     data-description="">
-                    <img src="tosia concrete park.jpg" alt="Tosia Concrete Park">
+                    <img src="tosia concrete park.jpg" alt="Tosia Concrete Park" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="concrete park,video,PSTR,2026"
                     data-description="">
-                    <video src="concrete park touch designer.mp4" muted loop playsinline></video>
+                    <video src="concrete park touch designer.mp4" muted loop playsinline preload="metadata"></video>
                 </div>
 
                 <!-- Desert Storm -->
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="desert storm,photo,PSTR,2026"
                     data-description="">
-                    <img src="desert storm main.jpeg" alt="Desert Storm Main">
+                    <img src="desert storm main.jpeg" alt="Desert Storm Main" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="desert storm,digital art,PSTR,2026"
                     data-description="">
-                    <img src="desert storm 3d full.png" alt="Desert Storm 3D Full">
+                    <img src="desert storm 3d full.png" alt="Desert Storm 3D Full" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="desert storm,digital art,Agustina,2026"
                     data-description="">
-                    <img src="desert storm agustina.png" alt="Desert Storm Agustina">
+                    <img src="desert storm agustina.png" alt="Desert Storm Agustina" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="desert storm,digital art,Agustina,2026"
                     data-description="">
-                    <img src="desert storm agustina 2.png" alt="Desert Storm Agustina 2">
+                    <img src="desert storm agustina 2.png" alt="Desert Storm Agustina 2" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="desert storm,digital art,PSTR,2026"
                     data-description="">
-                    <img src="desert storm grain 1.png" alt="Desert Storm Grain 1">
+                    <img src="desert storm grain 1.png" alt="Desert Storm Grain 1" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="desert storm,digital art,PSTR,2026"
                     data-description="">
-                    <img src="desert strom grain 2.png" alt="Desert Storm Grain 2">
+                    <img src="desert strom grain 2.png" alt="Desert Storm Grain 2" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="desert storm,digital art,PSTR,2026"
                     data-description="">
-                    <img src="desert strom grain 3.png" alt="Desert Storm Grain 3">
+                    <img src="desert strom grain 3.png" alt="Desert Storm Grain 3" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="desert storm,digital art,PSTR,2026"
                     data-description="">
-                    <img src="desert storm grain 4.png" alt="Desert Storm Grain 4">
+                    <img src="desert storm grain 4.png" alt="Desert Storm Grain 4" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="desert storm,digital art,PSTR,2026"
                     data-description="">
-                    <img src="desert storm green 1.png" alt="Desert Storm Green 1">
+                    <img src="desert storm green 1.png" alt="Desert Storm Green 1" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="desert storm,digital art,PSTR,2026"
                     data-description="">
-                    <img src="desert storm green 2.png" alt="Desert Storm Green 2">
+                    <img src="desert storm green 2.png" alt="Desert Storm Green 2" loading="lazy">
                 </div>
 
                 <!-- Focus -->
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="focus,photo,PSTR,2026"
                     data-description="">
-                    <img src="focus main.jpeg" alt="Focus Main">
+                    <img src="focus main.jpeg" alt="Focus Main" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="focus,digital art,PSTR,2026"
                     data-description="">
-                    <img src="focus purple 1.png" alt="Focus Purple 1">
+                    <img src="focus purple 1.png" alt="Focus Purple 1" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="focus,digital art,PSTR,2026"
                     data-description="">
-                    <img src="focus purple 2.png" alt="Focus Purple 2">
+                    <img src="focus purple 2.png" alt="Focus Purple 2" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="focus,digital art,PSTR,2026"
                     data-description="">
-                    <img src="focus topo.png" alt="Focus Topo">
+                    <img src="focus topo.png" alt="Focus Topo" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="focus,digital art,PSTR,2026"
                     data-description="">
-                    <img src="focus topo purple.png" alt="Focus Topo Purple">
+                    <img src="focus topo purple.png" alt="Focus Topo Purple" loading="lazy">
                 </div>
 
                 <!-- REC Remix Cover -->
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="144,digital art,REC,2026">
-                    <img src="REC_Remix_cover.jpg" alt="REC Remix Cover">
+                    <img src="REC_Remix_cover.jpg" alt="REC Remix Cover" loading="lazy">
                 </div>
 
                 <!-- Bw square -->
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="digital art,PSTR,The Chef,2026"
                     data-description="">
-                    <img src="Bw_square.png" alt="Bw square">
+                    <img src="Bw_square.png" alt="Bw square" loading="lazy">
                 </div>
                 
                 <!-- Touch Designer -->
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="digital art,PSTR,2026"
                     data-description="">
-                    <img src="3d touch designer.png" alt="3D Touch Designer">
+                    <img src="3d touch designer.png" alt="3D Touch Designer" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="digital art,PSTR,2026"
                     data-description="">
-                    <img src="distort touch designer.png" alt="Distort Touch Designer">
+                    <img src="distort touch designer.png" alt="Distort Touch Designer" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="digital art,PSTR,2026"
                     data-description="">
-                    <img src="topo touch desoi.png" alt="Topo Touch Designer">
+                    <img src="topo touch desoi.png" alt="Topo Touch Designer" loading="lazy">
                 </div>
 
                 <!-- Fujifilm Photos -->
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="photo,PSTR,2026" data-description="">
-                    <img src="fuifilm 1.JPG" alt="Fujifilm 1">
+                    <img src="fuifilm 1.JPG" alt="Fujifilm 1" loading="lazy">
                 </div>
                 <div class="polaroid" onclick="openFullscreen(this)" data-tags="photo,PSTR,2026" data-description="">
-                    <img src="fujifilm 2.JPG" alt="Fujifilm 2">
+                    <img src="fujifilm 2.JPG" alt="Fujifilm 2" loading="lazy">
                 </div>
             </div>
         </div>
