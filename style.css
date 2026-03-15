@@ -989,7 +989,8 @@ audio {
     }
 
     .album-title {
-        font-size: 22px;
+        font-size: 36px;
+        justify-content: center;
     }
 
     .album-art {
@@ -1124,8 +1125,7 @@ audio {
 
     /* Theme switcher */
     .theme-switcher {
-        top: 12px;
-        right: 12px;
+        display: none;
     }
 
     /* Footer */
@@ -1145,7 +1145,7 @@ audio {
     }
 
     .album-title {
-        font-size: 20px;
+        font-size: 32px;
     }
 
     .album-art {
