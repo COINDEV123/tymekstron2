@@ -709,13 +709,16 @@ body {
     border-color: var(--text);
 }
 
-/* Spotify — centered below top section */
-.spotify-centered {
-    text-align: center;
+/* Streaming buttons — centered below top section */
+.streaming-centered {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
     margin: 28px 0 10px;
 }
 
-.spotify-btn {
+.streaming-btn {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -732,7 +735,7 @@ body {
     z-index: 1; /* Establish stacking context */
 }
 
-.spotify-btn::before {
+.streaming-btn::before {
     content: '';
     position: absolute;
     top: 0;
@@ -744,7 +747,7 @@ body {
     transition: background 0.3s ease;
 }
 
-.spotify-btn::after {
+.streaming-btn::after {
     content: '';
     position: absolute;
     top: 0;
@@ -761,12 +764,12 @@ body {
     z-index: -1;
 }
 
-.spotify-btn:hover::after {
+.streaming-btn:hover::after {
     opacity: 1;
 }
 
 
-.spotify-btn svg {
+.streaming-btn svg {
     width: 18px;
     height: 18px;
     fill: currentColor;
